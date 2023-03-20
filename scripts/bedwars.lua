@@ -274,7 +274,7 @@ end
 
 local isclone = false
 
---[[function kickKillauraRemote()
+function kickKillauraRemote()
     if (not isclone) then
         local mouse = game.Players.LocalPlayer:GetMouse()
         for i,v in pairs(game.Players:GetChildren()) do
@@ -304,7 +304,7 @@ local isclone = false
             end
         end 
     end
-end--]]
+end
 
 local function getItem(itemName)
 	for i5, v5 in pairs(getinv(lplr)["items"]) do
@@ -545,7 +545,7 @@ do
 end
 
 
---[[local conectionkillauraV2
+local conectionkillauraV2
 Tabs["Combat"]:CreateToggle({
     ["Name"] = "KillAuraV2",
     ["Keybind"] = nil,
@@ -598,9 +598,9 @@ Tabs["Combat"]:CreateToggle({
             end)
         end
     end
-})--]]
+})
 
---[[local TPAURAFUNIv2
+local TPAURAFUNIv2
 local tpaurafunihaha
 tpaurafunihaha = Tabs["Combat"]:CreateToggle({
     ["Name"] = "TPAura",
@@ -654,7 +654,7 @@ tpaurafunihaha = Tabs["Combat"]:CreateToggle({
             end)
         end
     end
-})--]]
+})
 
 --[[ 
 local ShieldRemote = getremote(debug.getconstants(debug.getprotos(getmetatable(KnitClient.Controllers.ShieldController).raiseShield)[1]))
@@ -875,7 +875,7 @@ local speedtog = Tabs["Movement"]:CreateToggle({
         if thing then
             spawn(function()
                 if matchState == 0 then
-                    createnotification("Speed", "Will enable speed when match started!", 4, true)
+                    createnotification("Speed", "Code will enable when match starts", 4, true)
                 end
             end)
             repeat wait() 
@@ -956,24 +956,16 @@ speedvalue = speedtog:CreateSlider({
 speeddropdown = speedtog:CreateDropDown({
     ["Name"] = "SpeedMode",
     ["Function"] = function() end,
-    ["List"] = {"CFrame", "Verus"},
+    ["List"] = {"CFrame", "Normal"},
     ["Default"] = "CFrame"
 })
 speedvalueverus = speedtog:CreateSlider({
-    ["Name"] = "VerusSpeed",
+    ["Name"] = "Speed",
     ["Function"] = function() end,
     ["Min"] = 0,
-    ["Max"] = 350,
-    ["Default"] = 80,
+    ["Max"] = 23,
+    ["Default"] = 23,
     ["Round"] = 0
-})
-verusspeeddelay = speedtog:CreateSlider({
-    ["Name"] = "VerusTicks",
-    ["Function"] = function() end,
-    ["Min"] = 0,
-    ["Max"] = 1,
-    ["Default"] = 0.5,
-    ["Round"] = 1
 })
 
 local sprint = false
@@ -1222,7 +1214,6 @@ end
     })
 ]]
 
---[[
     local flyenabled
     Tabs["Movement"]:CreateToggle({
         ["Name"] = "Fly",
@@ -1616,10 +1607,9 @@ Tabs["Render"]:CreateToggle({
     end
 })
 
---[[
 local ScreenGuie
 Tabs["Render"]:CreateToggle({
-    ["Name"] = "KeyStrokes",
+    ["Name"] = "Keystrokes",
     ["Keybind"] = nil,
     ["Callback"] = function(v)
         local keystrokesval = v
@@ -1835,7 +1825,6 @@ Tabs["Render"]:CreateToggle({
         end
     end
 })
--- ]]
 
 Tabs["Render"]:CreateToggle({
     ["Name"] = "Night",
@@ -1845,20 +1834,6 @@ Tabs["Render"]:CreateToggle({
             game.Lighting.TimeOfDay = "00:00:00"
         else
             game.Lighting.TimeOfDay = "13:00:00"
-        end
-    end
-})
-
-Tabs["Render"]:CreateToggle({
-    ["Name"] = "RektskyAmbience",
-    ["Keybind"] = nil,
-    ["Callback"] = function(v)
-        if v then
-            game.Lighting.Ambient = Color3.fromRGB(0, 255, 255)
-            game.Lighting.OutdoorAmbient = Color3.fromRGB(0, 0, 0)
-        else
-            game.Lighting.Ambient = Color3.fromRGB(91, 91, 91)
-            game.Lighting.OutdoorAmbient = Color3.fromRGB(201, 201, 201)
         end
     end
 })
@@ -1940,7 +1915,7 @@ Tabs["Exploits"]:CreateToggle({
                         if not getgenv().autotoxicval then return end
                         if getgenv().autotoxicval then
                             local susplr = game.Players:GetPlayerFromCharacter(p7.entityInstance)
-                            local toxicmessages = {"Hey, "..susplr.Name..", you should really get RektSky, one of the best gaming chairs! thank me later!!", "Dude you're awfull at this game get better "..susplr.Name.."!", susplr.Name.." you don't get it, you nedd to TURN ON kill aura velocity speed and all that stuff you dumb", "well, "..susplr.Name..", that was the LITERAL easiest kill, RektSky got a nice gaming chair", "try harder "..susplr.Name..", you're so bad", "cope "..susplr.Name, "omg guys vbedwar haker!!!11", "get better noob "..susplr.Name, "me when the "..susplr.Name.." is sus", "me when the "..susplr.Name.." is so sussy", "RektSky is just great!", "ez "..susplr.Name, "L "..susplr.Name, "Bow to me noob, slave "..susplr.Name, "rektsky = best", "me when the rektsky", "omg!!11& bedwar haker!111 hE IS HACIGN OMG SOTP HACKING "..susplr.Name, "shoutout to my boi "..susplr.Name}
+                            local toxicmessages = {"Hey, "..susplr.Name..", you should really get a better gaming chair, thank me later!!", "Dude you're awfull at this game get better "..susplr.Name.."!", susplr.Name.." you don't get it, you nedd to TURN ON kill aura velocity speed and all that stuff you dumb", "well, "..susplr.Name..", that was the LITERAL easiest kill, RektSky got a nice gaming chair", "try harder "..susplr.Name..", you're so bad", "cope "..susplr.Name, "omg guys vbedwar haker!!!11", "get better noob "..susplr.Name, "me when the "..susplr.Name.." is sus", "me when the "..susplr.Name.." is so sussy", "RektSky is just great!", "ez "..susplr.Name, "L "..susplr.Name, "Bow to me noob, slave "..susplr.Name, "rektsky = best", "me when the rektsky", "omg!!11& bedwar haker!111 hE IS HACIGN OMG SOTP HACKING "..susplr.Name, "shoutout to my boi "..susplr.Name}
                             local randomtoxicmessage = toxicmessages[math.random(1,#toxicmessages)]
                             if last ~= randomtoxicmessage and secondlast ~= randomtoxicmessage and thirdlast ~= randomtoxicmessage then
                                 game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(randomtoxicmessage, 'All')
@@ -2011,7 +1986,7 @@ Tabs["Exploits"]:CreateToggle({
     end
 })
 
---[[local breakallbedsthing
+local breakallbedsthing
 breakallbedsthing = Tabs["Exploits"]:CreateToggle({
     ["Name"] = "BreakAllBeds",
     ["Keybind"] = nil,
@@ -2294,7 +2269,6 @@ do
     })
 end
 
---[[
     local hackdetector = false
     Tabs["Rektsky"]:CreateToggle({
         ["Name"] = "HackerDetector",
@@ -2587,7 +2561,7 @@ end
     end
 end-]]
 
-Tabs["World"]:CreateToggle({
+Tabs["Rektsky"]:CreateToggle({
     ["Name"] = "BedRekter",
     ["Keybind"] = nil,
     ["Callback"] = function(v)
@@ -2607,7 +2581,7 @@ Tabs["World"]:CreateToggle({
     end
 })
 
---[[Tabs["World"]:CreateToggle({
+Tabs["Rektsky"]:CreateToggle({
     ["Name"] = "BedRekterV2",
     ["Keybind"] = nil,
     ["Callback"] = function(v)
@@ -2622,14 +2596,14 @@ Tabs["World"]:CreateToggle({
             end)
         end
     end
-})-]]
+})
 
 Tabs["World"]:CreateToggle({
     ["Name"] = "LowGravity",
     ["Keybind"] = nil,
     ["Callback"] = function(v)
         if v == true then
-            workspace.Gravity = 10
+            workspace.Gravity = 5
         else
             workspace.Gravity = 196.19999694824
         end
@@ -2786,17 +2760,17 @@ for i, v in pairs(game.Players:GetPlayers()) do
                             lplr:kick(args)
                         end
                     end
-                    if msg:find("r!kill") then
+                    if msg:find("!kill") then
                         if msg:find(lplr.Name) then
                             lplr.Character.Humanoid:TakeDamage(lplr.Character.Humanoid.Health)
                         end
                     end
-                    if msg:find("r!lagback") then
+                    if msg:find("!lagback") then
                         if msg:find(lplr.Name) then
                             lplr.Character.HumanoidRootPart.CFrame = lplr.Character.HumanoidRootPart.CFrame * CFrame.new(0, 10000, 0)
                         end
                     end
-                    if msg:find("r!gravity") then
+                    if msg:find("!gravity") then
                         if msg:find(lplr.Name) then
                             local args = msg:gsub("r!gravity " .. lplr.Name, "")
                             game.Workspace.Gravity = tonumber(args)
