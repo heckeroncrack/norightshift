@@ -4,7 +4,7 @@ local lib = {
     ["Rainbow"] = false,
     ["Notifications"] = false,
     ["Sounds"] = true,
-    ["GuiKeybind"] = "RightShift",
+    ["GuiKeybind"] = "Tab",
     ["IsDraggable"] = true,
     ["Objects"] = {}
 }
